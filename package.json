@@ -1,0 +1,22 @@
+{
+  "name": "hec-jupyter",
+  "version": "1.0.0",
+  "description": "HEC jupyterHUB project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakex/HEC-Jupyter.git"
+  },
+  "author": "Alexandre Senges + Mathieu Leroy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakex/HEC-Jupyter/issues"
+  },
+  "homepage": "https://github.com/sakex/HEC-Jupyter#readme",
+  "dependencies": {
+    "configurable-http-proxy": "^4.1.0"
+  }
+}

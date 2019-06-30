@@ -1,14 +1,9 @@
-FROM python:3
-
-WORKDIR /
-
-COPY requirements.txt ./
+FROM nikolaik/python-nodejs:latest
+RUN npm install -g configurable-http-proxy
+COPY requirements.txt .
+COPY jupyterhub_config.py .
 RUN pip install --no-cache-dir -r requirements.txt
-
-WORKDIR /public/
-COPY /public/ /public/
-COPY jupyter_notebook_config.py /root/.jupyter/
-
+WORKDIR /
+COPY . /
 EXPOSE 8000
-
-CMD [ "jupyter", "notebook", "--allow-root", "--ip=0.0.0.0", "--port=8000" ]
+CMD [ "jupyterhub" ]

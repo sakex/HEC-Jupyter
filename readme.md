@@ -10,5 +10,6 @@
 ## Lancer
 
 -   `cd HEC-Jupyter`
+-   `docker pull nikolaik/python-nodejs:latest`
 -   `sudo docker-compose up --build`  
-    Ouvre ton navigateur et tape http://localhost:8000
+     Ouvre ton navigateur et tape http://localhost:8000
