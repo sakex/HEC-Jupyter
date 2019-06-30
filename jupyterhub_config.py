@@ -1,51 +1,17 @@
-# Configuration file for jupyterhub.
+##c.JupyterHub.template_paths = ["src/templates"]
 
-#------------------------------------------------------------------------------
-# Application(SingletonConfigurable) configuration
-#------------------------------------------------------------------------------
+c.Application.log_datefmt = '%Y-%d-%m %H:%M:%S'
 
-## This is an application.
+c.Application.log_format = '[%(name)s]%(highlevel)s %(message)s'
 
-## The date format used by logging formatters for %(asctime)s
-#c.Application.log_datefmt = '%Y-%m-%d %H:%M:%S'
+c.Application.log_level = 30
 
-## The Logging format template
-#c.Application.log_format = '[%(name)s]%(highlevel)s %(message)s'
+c.JupyterHub.active_server_limit = 400
+c.JupyterHub.active_user_window = 600
 
-## Set the log level by value or name.
-#c.Application.log_level = 30
-
-#------------------------------------------------------------------------------
-# JupyterHub(Application) configuration
-#------------------------------------------------------------------------------
-
-## An Application for starting a Multi-User Jupyter Notebook server.
-
-## Maximum number of concurrent servers that can be active at a time.
-#  
-#  Setting this can limit the total resources your users can consume.
-#  
-#  An active server is any server that's not fully stopped. It is considered
-#  active from the time it has been requested until the time that it has
-#  completely stopped.
-#  
-#  If this many user servers are active, users will not be able to launch new
-#  servers until a server is shutdown. Spawn requests will be rejected with a 429
-#  error asking them to try again.
-#  
-#  If set to 0, no limit is enforced.
-#c.JupyterHub.active_server_limit = 0
-
-## Duration (in seconds) to determine the number of active users.
-#c.JupyterHub.active_user_window = 1800
-
-## Grant admin users permission to access single-user servers.
-#  
-#  Users should be properly informed if this is enabled.
+c.JupyterHub.bind_url = 'http://:8000'
 #c.JupyterHub.admin_access = False
 
-## DEPRECATED since version 0.7.2, use Authenticator.admin_users instead.
-#c.JupyterHub.admin_users = set()
 
 ## Allow named single-user servers per user
 #c.JupyterHub.allow_named_servers = False
@@ -101,7 +67,7 @@
 ## The public facing URL of the whole JupyterHub application.
 #  
 #  This is the address on which the proxy will bind. Sets protocol, ip, base_url
-c.JupyterHub.bind_url = 'http://:8000'
+
 
 ## Whether to shutdown the proxy when the Hub shuts down.
 #  
@@ -479,7 +445,6 @@ c.JupyterHub.bind_url = 'http://:8000'
 #c.JupyterHub.subdomain_host = ''
 
 ## Paths to search for jinja templates, before using the default templates.
-#c.JupyterHub.template_paths = []
 
 ## Extra variables to be passed into jinja templates
 #c.JupyterHub.template_vars = {}
